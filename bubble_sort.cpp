@@ -47,7 +47,7 @@ int binary_search(vector<int> A, int n,int key)
 }
 
 
-void vector_display(vector<int> a,int n)
+void display_vector(vector<int> a,int n)
 {
     cout<<"\ndisplay started \n";
     for(int i=0;i<n;i++)
@@ -68,63 +68,36 @@ void display(int arr[], int n)
 }
 
 
-int get_ans(vector<int> A, int n)
+void bubble_sort(vector<int> a, int n)
 {
-    int left=0,right=n-1;
+    int i=0;
+    int j=0;
 
-    sort(A.begin(),A.end());
-
-    vector_display(A,A.size());
-
-    int sum = 0;
-    int absum = 0;
-    int ans =  abs(A[left] + A[right]);
-
-    while (left<right)
-    { cout<<"1\n";
-        cout<<A[left]<<" "<<A[right]<<endl;
-        sum = A[left] + A[right];
-        cout<<sum<<"\n";
-        absum = abs(sum);
-
-        
-        if(absum<ans)
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n-i-1;j++)
         {
-            ans = absum;
+            if(a[j]<a[j+1])
+            {
+                swap(a[j],a[j+1]);
+            }
+           
         }
-        if(sum<0)
-        {
-            left++;
-
-        }
-        else if(sum>0)
-        {
-            right--;
-        }
-        
-        
-            
-        
-        
     }
 
-   // cout<<A[left]<<" "<<A[right];
-   
+    display_vector(a,n);
 
-    cout<<"\n "<<ans<<endl;
     
-
-
 }
 
+int main()
+{
 
+    vector<int> a = {5,4,3,2,1};
 
+    bubble_sort(a,a.size());
 
-  int main()  
-{  
-    vector<int> arr = {1, 60, -10, 70, -80, 85};  
-    int n = sizeof(arr) / sizeof(arr[0]);  
-    get_ans(arr, arr.size());  
-    return 0;  
-}  
+   
 
+    
+}
