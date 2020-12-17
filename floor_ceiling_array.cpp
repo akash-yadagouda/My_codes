@@ -139,6 +139,77 @@ int ceil(vector<int> vec, int low , int high, int x)
 
 }
 
+int ceil(vector<int> vec, int low , int high, int x)
+{
+    
+
+    int mid;
+    int temp1=high;
+
+    while (1){
+
+        if(low==high)
+        {
+            cout<<"loop broke\n";
+            return -1;
+
+        }
+
+
+      
+
+    if(vec[low] > x)
+    {
+        return -1;
+    }
+
+    if(vec[high]<=x)
+    {
+        return high;
+    }
+
+
+
+    mid = (low+high)/2;
+
+
+    if(vec[mid] == x)
+    {
+        return mid;
+    }
+
+    if(vec[mid]<x)
+    {
+        if(mid+1 <= high && x <= vec[mid+1])
+        {
+            return mid+1;
+        }
+
+        low = mid + 1;
+
+    }
+    else if(vec[mid]>x)
+    {
+        if( (mid-1 >= low)  &&  (x > vec[mid-1]) )
+        {   
+            return mid;
+        }
+        high = mid-1;
+    }
+
+
+    }
+    
+
+
+
+
+
+
+    
+
+}
+
 int main()
 {
     int arr[] = {1, 2, 8, 10, 10, 12, 19};  
