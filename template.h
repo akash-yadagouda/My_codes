@@ -119,7 +119,7 @@ void vector_display(vector<int> a,int n)
      cout<<"\ndisplay end\n";
 }
 
-void display(int arr[], int n)
+void array_display(int arr[], int n)
 {
     cout<<"\ndisplay started \n";
     for(int i=0;i<n;i++)

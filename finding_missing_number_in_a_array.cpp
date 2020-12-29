@@ -20,7 +20,7 @@ int get_ans(int arr[], int n)
 
 int main()
 {
-    int arr[] = {2,1,3,5};
+    int arr[] = {1,2,3,5};
     int n = sizeof(arr)/sizeof(arr[0]);
 
     cout<<get_ans(arr,n);
